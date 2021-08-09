@@ -7,7 +7,7 @@ import { StyledVisualization, StyledVisualizationItem } from './StyledVisualizat
 const Visualization: React.FC = () => {
     const size = useSelector(getSize);
     const values = useSelector(getArray);
-    const [height, setHeight] = useState(0);
+    const [height, setHeight] = useState(300);
 
     useEffect(() => {
         setHeight(Math.min(window.innerHeight - 100, 600));

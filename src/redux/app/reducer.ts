@@ -3,12 +3,7 @@ import createRandomArray from '../../utils/createRandomArray';
 import { AppState, generateNewArray, setArray, setIsSorting, setSelectedAlgorithm, setSize, SortingAlgorithmType } from './actions';
 
 const initialState: AppState = {
-    array: createRandomArray(50).map((number, index) => ({
-        number,
-        isSorted: false,
-        isCurrentlySorted: false,
-        key: `${index}-${number}`,
-    })),
+    array: [],
     selectedAlgorithm: SortingAlgorithmType.BUBLE_SORT,
     size: 50,
     isSorting: false,

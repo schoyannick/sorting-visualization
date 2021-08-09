@@ -1,5 +1,6 @@
 import cloneDeep from 'lodash.clonedeep';
-import React, { useEffect , useRef } from 'react';
+import React, { useEffect , useState } from 'react';
+
 
 import { useDispatch, useSelector } from 'react-redux';
 import { generateNewArray, setArray, setIsSorting, SortingAlgorithmType, Values } from '../redux/app/actions';
@@ -16,13 +17,19 @@ const App: React.FC = () => {
 
     const size = useSelector(getSize);
     const isSorting = useSelector(getIsSorting);
-    const sortInterval = useRef(null);
     const selectedAlgorithm = useSelector(getSelectedAlgorithm);
     const array = useSelector(getArray);
+
+    const [mounted, setMounted] = useState(false);
     
     useEffect(() => {
-        dispatch(generateNewArray());
-    }, [dispatch, size]);
+        if (mounted) {
+            dispatch(generateNewArray());
+        } else {
+            setMounted(true);
+        }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [size]);
 
     const updateArray = (newValues: Array<Values>) => {
         dispatch(setArray(cloneDeep(newValues)));
