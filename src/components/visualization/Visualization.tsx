@@ -10,9 +10,9 @@ const Visualization: React.FC = () => {
     const [height, setHeight] = useState(300);
 
     useEffect(() => {
-        setHeight(Math.min(window.innerHeight - 100, 600));
+        setHeight(Math.min(window.innerHeight - 180, 600));
         const handleResize = () => {
-            setHeight(Math.min(window.innerHeight - 100, 600));
+            setHeight(Math.min(window.innerHeight - 180, 600));
         };
         window.addEventListener('resize', handleResize);
 
