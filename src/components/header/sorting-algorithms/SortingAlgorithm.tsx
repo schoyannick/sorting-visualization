@@ -3,8 +3,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import ToggleButton from '@material-ui/lab/ToggleButton';
 import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
 import { makeStyles } from '@material-ui/core';
-import { SORTING_ALGORITHMS } from '../../../constants/sortingAlgorithms';
+import Select from '@material-ui/core/Select';
+import MenuItem from '@material-ui/core/MenuItem';
 
+import { SORTING_ALGORITHMS } from '../../../constants/sortingAlgorithms';
 import { setSelectedAlgorithm, SortingAlgorithmType } from '../../../redux/app/actions';
 import { getIsSorting, getSelectedAlgorithm } from '../../../redux/app/selectors';
 
@@ -20,38 +22,33 @@ const SortingAlgorithm: React.FC = () => {
     const selectedSortingAlgorithm = useSelector(getSelectedAlgorithm);
     const isSorting = useSelector(getIsSorting);
 
-    const handleChange = (_, newValue: SortingAlgorithmType) => {
-        dispatch(setSelectedAlgorithm(newValue));
+    const handleChange = (event) => {
+        dispatch(setSelectedAlgorithm(event.target.value));
     };
   
     const classes = useStyles({ color: '3f51b5' });
 
     return (
-        <ToggleButtonGroup
+        <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
             value={selectedSortingAlgorithm}
-            exclusive
             onChange={handleChange}
-            aria-label="Sorting algorithm"
-            size="small"
+            autoWidth
             style={{
-                height: '36px',
+                width: '110px',
             }}
         >
             {SORTING_ALGORITHMS.map((algorithm) => (
-                <ToggleButton
+                <MenuItem
                     value={algorithm.type}
                     key={algorithm.type}
-                    aria-label={algorithm.text}
                     classes={classes}
-                    style={{
-                        textTransform: 'none',
-                    }}
-                    disabled={isSorting}
                 >
                     {algorithm.text}
-                </ToggleButton>
+                </MenuItem>
             ))}
-        </ToggleButtonGroup>
+        </Select>
     );
 };
 

@@ -4,6 +4,8 @@ import { GENERATE_NEW_ARRAY, SET_IS_SORTING, SET_SELECTED_ALGORITHM, SET_SIZE, U
 export enum SortingAlgorithmType {
     BUBLE_SORT = 0,
     QUICK_SORT = 1,
+    HEAP_SORT = 2,
+    MERGE_SORT = 3,
 }
 
 export type Values = {

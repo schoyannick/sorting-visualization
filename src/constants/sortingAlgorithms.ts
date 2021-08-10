@@ -6,5 +6,11 @@ export const SORTING_ALGORITHMS = [{
 }, {
     type: SortingAlgorithmType.QUICK_SORT,
     text: 'Quick Sort',
+}, {
+    type: SortingAlgorithmType.HEAP_SORT,
+    text: 'Heap Sort',
+}, {
+    type: SortingAlgorithmType.MERGE_SORT,
+    text: 'Merge Sort',
 }];
 

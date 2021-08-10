@@ -10,10 +10,11 @@ const Visualization: React.FC = () => {
     const [height, setHeight] = useState(300);
 
     useEffect(() => {
-        setHeight(Math.min(window.innerHeight - 180, 600));
         const handleResize = () => {
-            setHeight(Math.min(window.innerHeight - 180, 600));
+            const isMobileView = window.innerWidth < 600;
+            setHeight(Math.min(window.innerHeight - (isMobileView ? 200 : 150), 600));
         };
+        handleResize();
         window.addEventListener('resize', handleResize);
 
         return () => {
