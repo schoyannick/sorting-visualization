@@ -8,10 +8,10 @@ import { getIsSorting } from '../../../redux/app/selectors';
 const GenerateArray: React.FC = () => {
     const dispatch = useDispatch();
     const isSorting = useSelector(getIsSorting);
-    
+
     return (
         <Button
-            variant="outlined" 
+            variant="outlined"
             color="primary"
             style={{
                 textTransform: 'none',

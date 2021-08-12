@@ -3,7 +3,7 @@ const createRandomArray = (number: number): Array<number> => {
     for (let i = 0; i < number; i++) {
         const randomNumber = Math.floor(Math.random() * 100) + 1;
         array.push(randomNumber);
-    } 
+    }
     return array;
 };
 

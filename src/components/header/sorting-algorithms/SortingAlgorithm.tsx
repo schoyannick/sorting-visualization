@@ -1,13 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import ToggleButton from '@material-ui/lab/ToggleButton';
-import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
 import { makeStyles } from '@material-ui/core';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 
 import { SORTING_ALGORITHMS } from '../../../constants/sortingAlgorithms';
-import { setSelectedAlgorithm, SortingAlgorithmType } from '../../../redux/app/actions';
+import { setSelectedAlgorithm } from '../../../redux/app/actions';
 import { getIsSorting, getSelectedAlgorithm } from '../../../redux/app/selectors';
 
 const useStyles = makeStyles((theme) => ({
@@ -15,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
         color: theme.palette.primary.main,
     }),
 }));
-  
+
 const SortingAlgorithm: React.FC = () => {
     const dispatch = useDispatch();
 
@@ -25,7 +23,7 @@ const SortingAlgorithm: React.FC = () => {
     const handleChange = (event) => {
         dispatch(setSelectedAlgorithm(event.target.value));
     };
-  
+
     const classes = useStyles({ color: '3f51b5' });
 
     return (
@@ -38,6 +36,7 @@ const SortingAlgorithm: React.FC = () => {
             style={{
                 width: '110px',
             }}
+            disabled={isSorting}
         >
             {SORTING_ALGORITHMS.map((algorithm) => (
                 <MenuItem

@@ -38,7 +38,8 @@
 	"comma-dangle": ["error", "always-multiline"],
 	"object-property-newline": "error",
 	"function-paren-newline": "error",
-	"no-restricted-globals": "off"
+	"no-restricted-globals": "off",
+	"no-trailing-spaces": "error"
   },
   "parser": "@babel/eslint-parser"
 }

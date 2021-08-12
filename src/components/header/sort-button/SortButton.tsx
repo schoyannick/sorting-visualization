@@ -6,10 +6,10 @@ import { generateNewArray, setIsSorting } from '../../../redux/app/actions';
 
 const SortButton: React.FC = () => {
     const dispatch = useDispatch();
-    
+
     return (
         <Button
-            variant="outlined" 
+            variant="outlined"
             color="primary"
             style={{
                 textTransform: 'none',

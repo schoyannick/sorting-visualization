@@ -21,15 +21,15 @@ const Visualization: React.FC = () => {
             window.removeEventListener('resize', handleResize);
         };
     }, []);
-    
+
     return (
         <StyledVisualization>
             {values.map((value) => {
                 let backgroundColor = 'rgba(66, 134, 244, 0.8)';
                 if (value.isSorted) {
-                    backgroundColor = 'green';
+                    backgroundColor = '#008000';
                 } else if(value.isCurrentlySorted) {
-                    backgroundColor = 'red';
+                    backgroundColor = 'rgba(169, 92, 232, 0.8)';
                 }
 
                 return (

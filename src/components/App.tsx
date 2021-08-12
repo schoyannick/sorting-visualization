@@ -8,6 +8,7 @@ import { getArray, getIsSorting, getSelectedAlgorithm, getSize } from '../redux/
 import bubbleSort from '../utils/bubbleSort';
 
 import { GlobalStyles } from '../utils/globalStyles';
+import quickSort from '../utils/quickSort';
 import Header from './header/Header';
 import { StyledApp } from './StyledApp';
 import Visualization from './visualization/Visualization';
@@ -21,7 +22,7 @@ const App: React.FC = () => {
     const array = useSelector(getArray);
 
     const [mounted, setMounted] = useState(false);
-    
+
     useEffect(() => {
         if (mounted) {
             dispatch(generateNewArray());
@@ -34,12 +35,16 @@ const App: React.FC = () => {
     const updateArray = (newValues: Array<Values>) => {
         dispatch(setArray(cloneDeep(newValues)));
     };
- 
+
     useEffect(() => {
         const handleSort = async () => {
             switch (selectedAlgorithm) {
             case SortingAlgorithmType.BUBLE_SORT:
                 await bubbleSort(cloneDeep(array), updateArray);
+                dispatch(setIsSorting(false));
+                break;
+            case SortingAlgorithmType.QUICK_SORT:
+                await quickSort(cloneDeep(array), updateArray);
                 dispatch(setIsSorting(false));
                 break;
             default:

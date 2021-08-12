@@ -26,13 +26,13 @@ export type RootState = ReturnType<typeof store.getState>;
 
 export const initializeStore = (preloadedState?: RootState): RootState => {
     const newStore = store ?? initStore(preloadedState);
-  
+
     if (typeof window === 'undefined') return newStore;
     if (!store) store = newStore;
-  
+
     return newStore;
 };
-  
+
 export const useStore = (state: RootState): RootState => {
     const memoStore = useMemo(() => initializeStore(state), [state]);
     return memoStore;

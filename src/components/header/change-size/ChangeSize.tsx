@@ -24,9 +24,9 @@ const ChangeSize: React.FC = () => {
             </StyledChangeSizeText>
 
             <Slider
-                value={size / 5} 
+                value={size / 5}
                 onChange={handleChange}
-                aria-labelledby="continuous-slider" 
+                aria-labelledby="continuous-slider"
                 min={0}
                 max={20}
                 style={{
