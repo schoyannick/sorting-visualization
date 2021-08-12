@@ -63,8 +63,8 @@ const partition = async (arr: Array<Values>, update: (newValues: Array<Values>) 
 const quickSort = async (arr: Array<Values>, update: (newValues: Array<Values>) => void, left = 0, right = arr.length - 1): Promise<boolean> => {
     if (left <= right) {
         const divider = await partition(arr, update, left, right);
-        quickSort(arr, update, left, divider - 1);
-        quickSort(arr, update, divider + 1, right);
+        await quickSort(arr, update, left, divider - 1);
+        await quickSort(arr, update, divider + 1, right);
     }
     return true;
 };
