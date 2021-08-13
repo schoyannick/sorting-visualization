@@ -6,6 +6,7 @@ export const StyledVisualization = styled.div`
     max-width: 800px;
     display: flex;
     justify-content: center;
+    height: 100%;
 `;
 
 export const StyledVisualizationItem = styled.div`

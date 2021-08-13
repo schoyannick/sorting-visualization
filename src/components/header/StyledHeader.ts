@@ -11,7 +11,6 @@ export const StyledHeader = styled.div`
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: 20px;
-        margin: 20px 0;
-        height: 100%;
+        margin: 20px 0 40px 0;
     }
 `;

@@ -7,20 +7,6 @@ import { StyledVisualization, StyledVisualizationItem } from './StyledVisualizat
 const Visualization: React.FC = () => {
     const size = useSelector(getSize);
     const values = useSelector(getArray);
-    const [height, setHeight] = useState(300);
-
-    useEffect(() => {
-        const handleResize = () => {
-            const isMobileView = window.innerWidth < 600;
-            setHeight(Math.min(window.innerHeight - (isMobileView ? 200 : 150), 600));
-        };
-        handleResize();
-        window.addEventListener('resize', handleResize);
-
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, []);
 
     return (
         <StyledVisualization>
@@ -36,7 +22,7 @@ const Visualization: React.FC = () => {
                     <StyledVisualizationItem
                         style={{
                             width: `${100 / size}%`,
-                            height: `${(height / 100) * value.number}px`,
+                            height: `${value.number * 0.75}%`,
                             backgroundColor,
                         }}
                         key={value.key}
