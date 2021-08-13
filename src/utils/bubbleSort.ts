@@ -1,7 +1,7 @@
 /* eslint-disable no-await-in-loop */
 import { Values } from '../redux/app/actions';
 
-const bubbleSort = async (arr: Array<Values>, update: (newValues: Array<Values>) => void): Promise<boolean> => {
+const bubbleSort = async (arr: Array<Values>, update: (newValues: Array<Values>) => void): Promise<Array<Values>> => {
     for (let i = 0; i < arr.length; i++) {
         for (let j = i + 1; j < arr.length; j++) {
             arr[i].isCurrentlySorted = true;
@@ -26,7 +26,7 @@ const bubbleSort = async (arr: Array<Values>, update: (newValues: Array<Values>)
         update(arr);
         await new Promise(resolve => setTimeout(resolve, 1));
     }
-    return true;
+    return arr;
 };
 
 export default bubbleSort;

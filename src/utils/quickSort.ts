@@ -60,13 +60,13 @@ const partition = async (arr: Array<Values>, update: (newValues: Array<Values>) 
     return i;
 };
 
-const quickSort = async (arr: Array<Values>, update: (newValues: Array<Values>) => void, left = 0, right = arr.length - 1): Promise<boolean> => {
+const quickSort = async (arr: Array<Values>, update: (newValues: Array<Values>) => void, left = 0, right = arr.length - 1): Promise<Array<Values>> => {
     if (left <= right) {
         const divider = await partition(arr, update, left, right);
         await quickSort(arr, update, left, divider - 1);
         await quickSort(arr, update, divider + 1, right);
     }
-    return true;
+    return arr;
 };
 
 export default quickSort;
