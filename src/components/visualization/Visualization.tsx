@@ -1,4 +1,4 @@
-import React, { useEffect, useState, memo } from 'react';
+import React, { memo } from 'react';
 import { useSelector } from 'react-redux';
 
 import { getArray, getSize } from '../../redux/app/selectors';
@@ -14,7 +14,7 @@ const Visualization: React.FC = () => {
                 let backgroundColor = 'rgba(66, 134, 244, 0.8)';
                 if (value.isSorted) {
                     backgroundColor = '#008000';
-                } else if(value.isCurrentlySorted) {
+                } else if (value.isCurrentlySorted) {
                     backgroundColor = 'rgba(169, 92, 232, 0.8)';
                 }
 
