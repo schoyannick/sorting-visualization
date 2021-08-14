@@ -1,4 +1,3 @@
-/* eslint-disable no-await-in-loop */
 import { Values } from '../redux/app/actions';
 
 const bubbleSort = async (arr: Array<Values>, update: (newValues: Array<Values>) => void): Promise<Array<Values>> => {

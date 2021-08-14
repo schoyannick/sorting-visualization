@@ -39,7 +39,11 @@
 	"object-property-newline": "error",
 	"function-paren-newline": "error",
 	"no-restricted-globals": "off",
-	"no-trailing-spaces": "error"
+	"no-trailing-spaces": "error",
+	"comma-spacing": ["error",  { "after": true, "before": false }],
+	"keyword-spacing": ["error", { "before": true, "after": true }],
+	"space-in-parens": "error",
+	"no-await-in-loop": "off"
   },
   "parser": "@babel/eslint-parser"
 }

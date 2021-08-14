@@ -1,5 +1,5 @@
 import cloneDeep from 'lodash.clonedeep';
-import React, { useEffect , useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { generateNewArray, setArray, setIsSorting, SortingAlgorithmType, Values } from '../redux/app/actions';
 import { getArray, getIsSorting, getSelectedAlgorithm, getSize } from '../redux/app/selectors';
@@ -7,6 +7,7 @@ import bubbleSort from '../utils/bubbleSort';
 
 import { GlobalStyles } from '../utils/globalStyles';
 import heapSort from '../utils/heapSort';
+import mergeSort from '../utils/mergeSort';
 import quickSort from '../utils/quickSort';
 import Header from './header/Header';
 import { StyledApp } from './StyledApp';
@@ -41,20 +42,20 @@ const App: React.FC = () => {
             switch (selectedAlgorithm) {
             case SortingAlgorithmType.BUBLE_SORT:
                 await bubbleSort(copyArr, updateArray);
-                dispatch(setIsSorting(false));
                 break;
             case SortingAlgorithmType.QUICK_SORT:
                 await quickSort(copyArr, updateArray);
-                dispatch(setIsSorting(false));
                 break;
             case SortingAlgorithmType.HEAP_SORT:
                 await heapSort(copyArr, updateArray);
-                dispatch(setIsSorting(false));
+                break;
+            case SortingAlgorithmType.MERGE_SORT:
+                await mergeSort(copyArr, updateArray);
                 break;
             default:
-                dispatch(setIsSorting(false));
                 break;
             }
+            dispatch(setIsSorting(false));
         };
 
         if (isSorting) {

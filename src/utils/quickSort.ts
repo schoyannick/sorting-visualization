@@ -1,4 +1,3 @@
-/* eslint-disable no-await-in-loop */
 import { Values } from '../redux/app/actions';
 
 const TIME_OUT = 20;
