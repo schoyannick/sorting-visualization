@@ -24,6 +24,10 @@ const App: React.FC = () => {
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
+        dispatch(generateNewArray());
+    }, [dispatch]);
+
+    useEffect(() => {
         if (mounted) {
             dispatch(generateNewArray());
         } else {
