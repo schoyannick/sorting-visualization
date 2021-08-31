@@ -2,11 +2,11 @@
 <p align="center">
   <h3 align="center">Sorting Visualization</h3>
   <p align="center">
-    <a href="sorting-visualization.yscho.dev">
+    <a href="https://www.sorting-visualization.yscho.dev" target="_blank">
       <img src="https://www.yscho.dev/sorting-visualization.png" alt="Logo" width="320" height="474">
     </a>
     <br />
-    <a href="sorting-visualization.yscho.dev">View Site</a>
+    <a href="https://www.sorting-visualization.yscho.dev">View Site</a>
   </p>
 </p>
 
