@@ -3,7 +3,7 @@
   <h3 align="center">Sorting Visualization</h3>
   <p align="center">
     <a href="https://www.sorting-visualization.yscho.dev" target="_blank">
-      <img src="https://www.yscho.dev/sorting-visualization.png" alt="Logo" width="320" height="474">
+      <img src="https://www.yscho.dev/sorting-visualization.png" alt="Logo" width="358" height="329">
     </a>
     <br />
     <a href="https://www.sorting-visualization.yscho.dev">View Site</a>
